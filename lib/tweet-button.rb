@@ -34,6 +34,8 @@ module TweetButton
     html_safe_string('<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>')
   end
   
+  alias_method :twitter_widgets_js_tag, :tweet_widgets_js_tag
+  
   def custom_tweet_button(text = 'Tweet', options = {}, html_options = {})
     # This line is really long.  And it makes me sad.
     link_to(text, "#{TWITTER_SHARE_URL}?#{options_to_query_string(default_tweet_button_options.merge(options))}", html_options)
