@@ -25,7 +25,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "lib/tweet-button.rb",
      "test/helper.rb",
-     "test/test_tweet-button.rb"
+     "test/test_tweet-button.rb",
+     "tweet-button.gemspec"
   ]
   s.homepage = %q{http://github.com/jm/tweet-button}
   s.rdoc_options = ["--charset=UTF-8"]

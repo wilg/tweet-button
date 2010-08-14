@@ -5,7 +5,7 @@ module TweetButton
     # Merge user specified overrides into defaults, then convert those to data-* attrs
     params = options_to_data_params(default_tweet_button_options.merge(options))
     
-    html = ''.html_safe
+    html = html_safe_string('')
     
     unless @widgetized
       html << tweet_widgets_js_tag
@@ -31,7 +31,7 @@ module TweetButton
   
   def tweet_widgets_js_tag
     @widgetized = true
-    '<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>'.html_safe
+    html_safe_string('<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>')
   end
   
   def custom_tweet_button(text = 'Tweet', options = {}, html_options = {})
@@ -51,5 +51,10 @@ module TweetButton
   # I'm pretty sure this is in the stdlib or Rails somewhere.  Too lazy to figure it out now.
   def options_to_query_string(opts)
     opts.map{|k,v| "#{CGI.escape(k.to_s)}=#{CGI.escape(v)}"}.join("&")
+  end
+  
+  def html_safe_string(str)
+    @use_html_safe ||= "".respond_to?(:html_safe)
+    @use_html_safe ? str.html_safe : str
   end
 end
