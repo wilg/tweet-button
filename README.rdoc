@@ -39,7 +39,7 @@ So, if you wanted to tweet about Hacker News, attribute it to Peter Cooper, and 
 
     <%= tweet_button(:via => "peterc", :url => "http://news.ycombinator.com", :text => "AWESOME.")
     
-Simple enough, eh?  Also, this method call will include the Twitter JavaScript into the page (it only does it once, even if you have multiple buttons on the page).  To put this wherever you'd like (i.e., your header), then use the +twitter_widgets_js_tag+ method.  If you call this method, it will place the tag wherever you call it from (and only place it there; subsequent calls do nothing).
+Simple enough, eh?  Also, this method call will include the Twitter JavaScript into the page (it only does it once, even if you have multiple buttons on the page).  To put this wherever you'd like (i.e., your header), then use the +tweet_widgets_js_tag+ method.  If you call this method, it will place the tag wherever you call it from (and only place it there; subsequent calls do nothing).
 
 The gem also supports the custom Twitter share links.  To generate one, use the +custom_tweet_button+ (aliased to +custom_tweet_link+ also) method:
 
