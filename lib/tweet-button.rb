@@ -7,7 +7,7 @@ module TweetButton
     
     html = html_safe_string('')
     
-    unless @widgetized
+    if !@widgetized && !options[:no_js]
       html << tweet_widgets_js_tag
     end
     
